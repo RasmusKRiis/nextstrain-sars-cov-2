@@ -1,0 +1,26 @@
+# Template expanded at runtime by scripts/extract_lineages.py
+use_nextalign: true
+
+inputs:
+  - name: custom_data
+    metadata: ../data/custom.metadata.tsv
+    sequences: ../data/custom.sequences.fasta
+
+# For custom-only runs, "best" is safest; if you include the reference overlay, you can change to Wuhan-Hu-1/2019
+refine:
+  root: "best"
+
+# Subsampling scheme filtered by per-build pango_lineage list
+subsampling:
+  by-pango-list:
+    query: --query "(pango_lineage in {pango_lineage})"
+
+filter:
+  min_length: 28500
+
+files:
+  auspice_config: ../profiles/lineage-builds/auspice-config.json
+  description: ../profiles/lineage-builds/description.md
+
+builds:
+__BUILDS__
