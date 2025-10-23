@@ -13,6 +13,7 @@ CORES="${CORES:-4}"
 INCLUDE_REFERENCE="${INCLUDE_REFERENCE:-0}"
 : "${AUSPICE_PREFIX:=sars-cov-2}"
 : "${AUSPICE_DIR:=${OUT_DIR}/auspice}"
+SANITIZE_METADATA=${SANITIZE_METADATA:-true}
 
 [[ -f "${DATA_DIR}/custom.metadata.tsv" ]] || { echo "Missing ${DATA_DIR}/custom.metadata.tsv"; exit 1; }
 [[ -f "${DATA_DIR}/custom.sequences.fasta" ]] || { echo "Missing ${DATA_DIR}/custom.sequences.fasta"; exit 1; }
@@ -69,6 +70,7 @@ YAM
     --config conda_environment="${CONDA_ENV}" \
              auspice_json_prefix="${AUSPICE_PREFIX}" \
              auspice_dir="${AUSPICE_DIR}" \
+             sanitize_metadata="${SANITIZE_METADATA}" \
     --configfile "${DEFAULTS_CFG}" \
     --configfile "profiles/lineage-builds/builds.yaml" \
     --configfile "profiles/lineage-builds/reference.overlay.yaml"
@@ -78,6 +80,7 @@ else
     --config conda_environment="${CONDA_ENV}" \
              auspice_json_prefix="${AUSPICE_PREFIX}" \
              auspice_dir="${AUSPICE_DIR}" \
+             sanitize_metadata="${SANITIZE_METADATA}" \
     --configfile "${DEFAULTS_CFG}" \
     --configfile "profiles/lineage-builds/builds.yaml"
 fi
