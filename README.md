@@ -38,3 +38,6 @@ LINEAGE_PREFIXES="XFG XEC BA.2.86" bash run.sh
 - You can add or remove families at run-time via `LINEAGE_PREFIXES="..."`.
 - We clone `.ncov/` fresh every run to stay current; pin with `NCOV_REF=v13.0.0` for stability.
 - Override `AUSPICE_PREFIX` (default `sars-cov-2`) or `AUSPICE_DIR` (default `results/auspice/`) if you need custom Auspice naming or destination paths.
+
+## Configuration
+- `SANITIZE_METADATA` (default `true`) controls whether the Nextstrain pipeline runs its metadata sanitization step. Override per invocation, e.g. `SANITIZE_METADATA=false bash run.sh`, if you already pre-cleaned your data.
