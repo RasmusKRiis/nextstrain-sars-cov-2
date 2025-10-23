@@ -19,6 +19,13 @@ subsampling:
 filter:
   min_length: 100
 
+traits:
+  default:
+    sampling_bias_correction: 2.5
+    columns:
+      - country
+      - pango_lineage
+
 files:
   auspice_config: profiles/lineage-builds/auspice-config.json
   description: profiles/lineage-builds/description.md
