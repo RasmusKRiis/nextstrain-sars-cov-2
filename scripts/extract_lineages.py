@@ -42,7 +42,7 @@ def build_block(prefix: str, lineage_list: list[str]) -> str:
     return f"""  {prefix}:
     title: "SARS-CoV-2 — {prefix}"
     subsampling_scheme: by-pango-list
-    pangolin_lineage: {pylist(lineage_list)}
+    pango_lineage: {pylist(lineage_list)}
 """
 
 def main():

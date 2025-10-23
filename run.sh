@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Run the Nextstrain ncov workflow for the configured lineages.
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -12,8 +13,6 @@ NCOV_REF="${NCOV_REF:-master}"
 CORES="${CORES:-4}"
 INCLUDE_REFERENCE="${INCLUDE_REFERENCE:-0}"
 : "${AUSPICE_PREFIX:=sars-cov-2}"
-: "${AUSPICE_DIR:=${OUT_DIR}/auspice}"
-SANITIZE_METADATA=${SANITIZE_METADATA:-true}
 
 [[ -f "${DATA_DIR}/custom.metadata.tsv" ]] || { echo "Missing ${DATA_DIR}/custom.metadata.tsv"; exit 1; }
 [[ -f "${DATA_DIR}/custom.sequences.fasta" ]] || { echo "Missing ${DATA_DIR}/custom.sequences.fasta"; exit 1; }
@@ -24,7 +23,6 @@ if ! git clone --depth 1 --branch "${NCOV_REF}" https://github.com/nextstrain/nc
   git clone --depth 1 --branch master https://github.com/nextstrain/ncov.git "${NCOV_DIR}"
 fi
 
-# Generate lineage-aware builds.yaml
 if [[ -f "${DATA_DIR}/LineageDescription.txt" ]]; then
   python3 "${ROOT}/scripts/extract_lineages.py" \
     --prefix ${LINEAGE_PREFIXES} \
@@ -39,55 +37,42 @@ else
 fi
 echo "Wrote ${PROFILE_DIR}/builds.yaml"
 
-# Pick correct Snakefile
-if [[ -f ".ncov/Snakefile" ]]; then
-  SNAKEFILE=".ncov/Snakefile"
-elif [[ -f ".ncov/workflow/Snakefile" ]]; then
-  SNAKEFILE=".ncov/workflow/Snakefile"
-elif [[ -f ".ncov/workflow/snakefile" ]]; then
-  SNAKEFILE=".ncov/workflow/snakefile"
-else
-  echo "❌ Cannot find Snakefile inside .ncov" >&2
-  ls -la .ncov .ncov/workflow || true
-  exit 1
-fi
+mkdir -p "${NCOV_DIR}/data" "${NCOV_DIR}/profiles/lineage-builds"
+cp "${DATA_DIR}/custom.metadata.tsv" "${NCOV_DIR}/data/"
+cp "${DATA_DIR}/custom.sequences.fasta" "${NCOV_DIR}/data/"
+cp -f "${PROFILE_DIR}/"* "${NCOV_DIR}/profiles/lineage-builds/"
 
-# Ensure required defaults are loaded (provides auspice_json_prefix, etc.)
-DEFAULTS_CFG=".ncov/defaults/parameters.yaml"
-CONDA_ENV="workflow/envs/nextstrain.yaml"
-
-mkdir -p "${OUT_DIR}"
+BUILDS_CFG_REL="profiles/lineage-builds/builds.yaml"
+REF_OVERLAY=""
 
 if [[ "${INCLUDE_REFERENCE}" == "1" ]]; then
-  cat > "${PROFILE_DIR}/reference.overlay.yaml" <<'YAM'
+  REF_OVERLAY="${NCOV_DIR}/profiles/lineage-builds/reference.overlay.yaml"
+  cat > "${REF_OVERLAY}" <<'YAM'
 inputs:
   - name: reference_data
     metadata: https://data.nextstrain.org/files/ncov/open/reference/metadata.tsv.xz
     sequences: https://data.nextstrain.org/files/ncov/open/reference/sequences.fasta.xz
 YAM
-  nextstrain build . --cores "${CORES}" --use-conda \
-    --snakefile "${SNAKEFILE}" \
-    --config conda_environment="${CONDA_ENV}" \
-             auspice_json_prefix="${AUSPICE_PREFIX}" \
-             auspice_dir="${AUSPICE_DIR}" \
-             sanitize_metadata="${SANITIZE_METADATA}" \
-    --configfile "${DEFAULTS_CFG}" \
-    --configfile "profiles/lineage-builds/builds.yaml" \
-    --configfile "profiles/lineage-builds/reference.overlay.yaml"
-else
-  nextstrain build . --cores "${CORES}" --use-conda \
-    --snakefile "${SNAKEFILE}" \
-    --config conda_environment="${CONDA_ENV}" \
-             auspice_json_prefix="${AUSPICE_PREFIX}" \
-             auspice_dir="${AUSPICE_DIR}" \
-             sanitize_metadata="${SANITIZE_METADATA}" \
-    --configfile "${DEFAULTS_CFG}" \
-    --configfile "profiles/lineage-builds/builds.yaml"
 fi
 
-# Collect outputs (depending on where ncov writes them)
-cp -v auspice/*.json "${OUT_DIR}/" 2>/dev/null || true
+CONFIG_ARGS=(
+  "auspice_json_prefix=${AUSPICE_PREFIX}"
+)
+
+pushd "${NCOV_DIR}" >/dev/null
+CMD=(nextstrain build . --cores "${CORES}" --config "${CONFIG_ARGS[@]}" --configfile "${BUILDS_CFG_REL}")
+if [[ -n "${REF_OVERLAY}" ]]; then
+  CMD+=(--configfile "profiles/lineage-builds/$(basename "${REF_OVERLAY}")")
+fi
+"${CMD[@]}"
+popd >/dev/null
+
+mkdir -p "${OUT_DIR}"
 cp -v "${NCOV_DIR}"/auspice/*.json "${OUT_DIR}/" 2>/dev/null || true
+
+if [[ -n "${REF_OVERLAY}" ]]; then
+  rm -f "${REF_OVERLAY}"
+fi
 
 echo "✅ Done. Auspice JSON in ${OUT_DIR}/"
 echo "👉 View locally: nextstrain view results/"
