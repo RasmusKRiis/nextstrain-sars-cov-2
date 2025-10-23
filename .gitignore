@@ -1,11 +1,5 @@
-# Python cache
+.venv/
 __pycache__/
 *.pyc
-
-# Nextstrain clone + outputs
-.ncov/
-results/
-
-# Editors
-.vscode/
-.idea/
+htmlcov/
+.env

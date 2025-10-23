@@ -1,0 +1,29 @@
+name: "Agent Task"
+description: "Small, auditable task for Agent (Codex CLI)."
+title: "[Task] <short title>"
+labels: ["task"]
+body:
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal
+      description: Single sentence of desired outcome.
+      placeholder: e.g., Add pytest coverage reporting and HTML artifact.
+  - type: textarea
+    id: plan
+    attributes:
+      label: Plan
+      description: Steps the agent should follow (short, cing2 cing4).
+      placeholder: 1) create branch; 2) add deps; 3) update CI; 4) open draft PR.
+  - type: textarea
+    id: tests
+    attributes:
+      label: Tests
+      description: What tests or checks must pass?
+      placeholder: pytest passes, coverage ≥85%, pre-commit clean.
+  - type: textarea
+    id: cadence
+    attributes:
+      label: Logging cadence
+      description: When to comment progress.
+      placeholder: Comment after env setup, after tests pass, after DRaft PR opens.

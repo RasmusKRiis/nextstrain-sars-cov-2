@@ -1,0 +1,10 @@
+[tool.pytest.ini_options]
+addopts = "--cov=app --cov-report=term-missing --cov-report=html --cov-fail-under=85"
+
+[tool.isort]
+profile = "black"
+line_length = 88
+
+[tool.black]
+line-length = 88
+target-version = ["py311"]
