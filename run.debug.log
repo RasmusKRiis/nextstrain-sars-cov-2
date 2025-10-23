@@ -1,0 +1,35 @@
++ set -euo pipefail
++++ dirname run.sh
+++ cd .
+++ pwd
++ ROOT=/home/rasmuskopperud.riis/Coding/CODEX-projects/nextstrain-sars-cov-2
++ NCOV_DIR=/home/rasmuskopperud.riis/Coding/CODEX-projects/nextstrain-sars-cov-2/.ncov
++ PROFILE_DIR=/home/rasmuskopperud.riis/Coding/CODEX-projects/nextstrain-sars-cov-2/profiles/lineage-builds
++ DATA_DIR=/home/rasmuskopperud.riis/Coding/CODEX-projects/nextstrain-sars-cov-2/data
++ OUT_DIR=/home/rasmuskopperud.riis/Coding/CODEX-projects/nextstrain-sars-cov-2/results
++ LINEAGE_PREFIXES='XFG XEC'
++ NCOV_REF=master
++ CORES=4
++ INCLUDE_REFERENCE=0
++ [[ -f /home/rasmuskopperud.riis/Coding/CODEX-projects/nextstrain-sars-cov-2/data/custom.metadata.tsv ]]
++ [[ -f /home/rasmuskopperud.riis/Coding/CODEX-projects/nextstrain-sars-cov-2/data/custom.sequences.fasta ]]
++ rm -rf /home/rasmuskopperud.riis/Coding/CODEX-projects/nextstrain-sars-cov-2/.ncov
++ git clone --depth 1 --branch master https://github.com/nextstrain/ncov.git /home/rasmuskopperud.riis/Coding/CODEX-projects/nextstrain-sars-cov-2/.ncov
+Cloning into '/home/rasmuskopperud.riis/Coding/CODEX-projects/nextstrain-sars-cov-2/.ncov'...
++ [[ -f /home/rasmuskopperud.riis/Coding/CODEX-projects/nextstrain-sars-cov-2/data/LineageDescription.txt ]]
++ python3 /home/rasmuskopperud.riis/Coding/CODEX-projects/nextstrain-sars-cov-2/scripts/extract_lineages.py --prefix XFG XEC --template /home/rasmuskopperud.riis/Coding/CODEX-projects/nextstrain-sars-cov-2/profiles/lineage-builds/builds.template.yaml --outfile /home/rasmuskopperud.riis/Coding/CODEX-projects/nextstrain-sars-cov-2/profiles/lineage-builds/builds.yaml
+Wrote /home/rasmuskopperud.riis/Coding/CODEX-projects/nextstrain-sars-cov-2/profiles/lineage-builds/builds.yaml
+  XFG OK
+  XEC OK
++ echo 'Wrote /home/rasmuskopperud.riis/Coding/CODEX-projects/nextstrain-sars-cov-2/profiles/lineage-builds/builds.yaml'
+Wrote /home/rasmuskopperud.riis/Coding/CODEX-projects/nextstrain-sars-cov-2/profiles/lineage-builds/builds.yaml
++ [[ -f .ncov/Snakefile ]]
++ SNAKEFILE=.ncov/Snakefile
++ DEFAULTS_CFG=.ncov/defaults/parameters.yaml
++ CONDA_ENV=workflow/envs/nextstrain.yaml
++ mkdir -p /home/rasmuskopperud.riis/Coding/CODEX-projects/nextstrain-sars-cov-2/results
++ [[ 0 == \1 ]]
++ nextstrain build . --cores 4 --use-conda --snakefile .ncov/Snakefile --config conda_environment=workflow/envs/nextstrain.yaml --configfile .ncov/defaults/parameters.yaml --configfile profiles/lineage-builds/builds.yaml
+KeyError in file "/nextstrain/build/.ncov/Snakefile", line 148:
+'auspice_json_prefix'
+  File "/nextstrain/build/.ncov/Snakefile", line 148, in <module>

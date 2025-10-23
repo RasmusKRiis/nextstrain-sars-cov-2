@@ -3,24 +3,24 @@ use_nextalign: true
 
 inputs:
   - name: custom_data
-    metadata: ../data/custom.metadata.tsv
-    sequences: ../data/custom.sequences.fasta
+    metadata: data/custom.metadata.tsv
+    sequences: data/custom.sequences.fasta
 
-# For custom-only runs, "best" is safest; if you include the reference overlay, you can change to Wuhan-Hu-1/2019
+# For custom-only runs, "best" is safest; switch if you include the reference overlay.
 refine:
   root: "best"
 
-# Subsampling scheme filtered by per-build pango_lineage list
+# Subsampling scheme filtered by per-build pangolin_lineage list
 subsampling:
   by-pango-list:
     query: --query "(pangolin_lineage in {pangolin_lineage})"
 
 filter:
-  min_length: 28500
+  min_length: 100
 
 files:
-  auspice_config: ../profiles/lineage-builds/auspice-config.json
-  description: ../profiles/lineage-builds/description.md
+  auspice_config: profiles/lineage-builds/auspice-config.json
+  description: profiles/lineage-builds/description.md
 
 builds:
 __BUILDS__

@@ -1,0 +1,68 @@
+#!/usr/bin/env bash
+# Run Nextstrain ncov for one or more lineage families from a single combined input.
+set -euo pipefail
+
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+NCOV_DIR="${ROOT}/.ncov"
+PROFILE_DIR="${ROOT}/profiles/lineage-builds"
+DATA_DIR="${ROOT}/data"
+OUT_DIR="${ROOT}/results"
+
+# Runtime options (env-overridable)
+LINEAGE_PREFIXES="${LINEAGE_PREFIXES:-XFG XEC}"   # space-separated lineage families
+NCOV_REF="${NCOV_REF:-master}"                    # use 'master' by default (or a tag like v17)
+CORES="${CORES:-4}"                               # snakemake cores
+INCLUDE_REFERENCE="${INCLUDE_REFERENCE:-0}"       # 1 to also include tutorial reference dataset
+
+# Sanity checks for required inputs
+[[ -f "${DATA_DIR}/custom.metadata.tsv" ]] || { echo "Missing ${DATA_DIR}/custom.metadata.tsv"; exit 1; }
+[[ -f "${DATA_DIR}/custom.sequences.fasta" ]] || { echo "Missing ${DATA_DIR}/custom.sequences.fasta"; exit 1; }
+
+# 1) Fresh clone of official workflow (inside repo so Docker sees it)
+rm -rf "${NCOV_DIR}"
+if ! git clone --depth 1 --branch "${NCOV_REF}" https://github.com/nextstrain/ncov.git "${NCOV_DIR}"; then
+  echo "⚠️ Could not clone branch/tag '${NCOV_REF}'. Falling back to 'master'."
+  git clone --depth 1 --branch master https://github.com/nextstrain/ncov.git "${NCOV_DIR}"
+fi
+
+# 2) Render builds.yaml from template, expanding lineage lists
+python3 "${ROOT}/scripts/extract_lineages.py" \
+  --prefix ${LINEAGE_PREFIXES} \
+  --infile "${DATA_DIR}/LineageDescription.txt" \
+  --template "${PROFILE_DIR}/builds.template.yaml" \
+  --outfile "${PROFILE_DIR}/builds.yaml"
+
+# 3) Optional reference overlay written inside repo so container can read it
+REF_OVERLAY_REPO=""
+if [[ "${INCLUDE_REFERENCE}" == "1" ]]; then
+  REF_OVERLAY_REPO="${PROFILE_DIR}/reference.overlay.yaml"
+  cat > "${REF_OVERLAY_REPO}" <<'YAM'
+inputs:
+  - name: reference_data
+    metadata: https://data.nextstrain.org/files/ncov/open/reference/metadata.tsv.xz
+    sequences: https://data.nextstrain.org/files/ncov/open/reference/sequences.fasta.xz
+YAM
+fi
+
+# Paths as seen from the .ncov working directory
+CONFIG_IN_NCOV="../profiles/lineage-builds/builds.yaml"
+REF_OVERLAY_IN_NCOV="../profiles/lineage-builds/reference.overlay.yaml"
+
+# 4) Run the build from the REPO ROOT, targeting the .ncov workflow dir.
+#    Nextstrain will mount the current dir (ROOT) into the container, so both
+#    .ncov and profiles/ are visible.
+mkdir -p "${OUT_DIR}"
+if [[ -n "${REF_OVERLAY_REPO}" ]]; then
+  nextstrain build "${NCOV_DIR}" --cores "${CORES}" \
+    --configfile "${CONFIG_IN_NCOV}" \
+    --configfile "${REF_OVERLAY_IN_NCOV}"
+else
+  nextstrain build "${NCOV_DIR}" --cores "${CORES}" \
+    --configfile "${CONFIG_IN_NCOV}"
+fi
+
+# 5) Collect outputs
+cp -v "${NCOV_DIR}"/auspice/*.json "${OUT_DIR}/" || true
+
+echo "✅ Done. Auspice JSON written to ${OUT_DIR}/"
+echo "👉 Serve locally with: nextstrain view results/"
