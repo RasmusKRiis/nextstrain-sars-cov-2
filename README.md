@@ -37,3 +37,4 @@ LINEAGE_PREFIXES="XFG XEC BA.2.86" bash run.sh
 - Each build filters by `pangolin_lineage in {pangolin_lineage}` (expanded list).
 - You can add or remove families at run-time via `LINEAGE_PREFIXES="..."`.
 - We clone `.ncov/` fresh every run to stay current; pin with `NCOV_REF=v13.0.0` for stability.
+- Override `AUSPICE_PREFIX` (default `sars-cov-2`) or `AUSPICE_DIR` (default `results/auspice/`) if you need custom Auspice naming or destination paths.
