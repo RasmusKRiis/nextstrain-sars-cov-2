@@ -8,7 +8,7 @@ PROFILE_DIR="${ROOT}/profiles/lineage-builds"
 DATA_DIR="${ROOT}/data"
 OUT_DIR="${ROOT}/results"
 
-LINEAGE_PREFIXES="${LINEAGE_PREFIXES:-XFG XEC}"
+LINEAGE_PREFIXES="${LINEAGE_PREFIXES:-XFG XEC JN.1 KP.3.1.1 LP.8.1 NB.1.8.1 XFG}"
 NCOV_REF="${NCOV_REF:-master}"
 CORES="${CORES:-4}"
 INCLUDE_REFERENCE="${INCLUDE_REFERENCE:-0}"
@@ -117,6 +117,7 @@ rm -f "${AUSPICE_DIR}/"sars-cov-2_*.json 2>/dev/null || true
 
 declare -a SUCCESS_BUILDS=()
 declare -a SKIPPED_BUILDS=()
+declare -a FAILED_BUILDS=()
 
 for build_key in "${BUILD_KEYS[@]}"; do
   title="${BUILD_TITLES[${build_key}]}"
@@ -167,8 +168,15 @@ for build_key in "${BUILD_KEYS[@]}"; do
         cp -f "${NCOV_DIR}/results/${build_key}/excluded_by_diagnostics.txt" "${OUT_DIR}/${build_key}/" 2>/dev/null || true
       fi
     else
-      echo "❌ Build ${title} failed. See logs in ${NCOV_DIR}/logs/"
-      exit 1
+      echo "❌ Build ${title} failed. See logs in ${OUT_DIR}/${build_key}/logs/"
+      FAILED_BUILDS+=("${build_key}")
+      mkdir -p "${OUT_DIR}/${build_key}/logs"
+      if [[ -d "${NCOV_DIR}/logs" ]]; then
+        copy_tree "${NCOV_DIR}/logs/" "${OUT_DIR}/${build_key}/logs/"
+      fi
+      if [[ -d "${NCOV_DIR}/.snakemake/log" ]]; then
+        copy_tree "${NCOV_DIR}/.snakemake/log/" "${OUT_DIR}/${build_key}/logs/snakemake/"
+      fi
     fi
   fi
 
@@ -211,4 +219,14 @@ if [[ ${#SKIPPED_BUILDS[@]} -gt 0 ]]; then
     echo "    - ${BUILD_TITLES[${key}]} (${key})"
   done
 fi
+if [[ ${#FAILED_BUILDS[@]} -gt 0 ]]; then
+  echo "   Failed builds:"
+  for key in "${FAILED_BUILDS[@]}"; do
+    echo "    - ${BUILD_TITLES[${key}]} (${key})"
+  done
+fi
 echo "👉 View locally: nextstrain view results/"
+
+if [[ ${#FAILED_BUILDS[@]} -gt 0 ]]; then
+  exit 1
+fi

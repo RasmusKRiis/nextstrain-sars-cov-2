@@ -1,4 +1,0 @@
-strain	filter	kwargs
-Norway/3331/2025	filter_by_exclude	"[[""exclude_file"", ""results/XEC/excluded_by_diagnostics.txt""]]"
-Norway/3396/2025	filter_by_exclude	"[[""exclude_file"", ""results/XEC/excluded_by_diagnostics.txt""]]"
-Norway/2344/2025	filter_by_exclude	"[[""exclude_file"", ""results/XEC/excluded_by_diagnostics.txt""]]"
