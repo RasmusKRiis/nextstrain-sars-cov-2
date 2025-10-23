@@ -34,6 +34,6 @@ LINEAGE_PREFIXES="XFG XEC BA.2.86" bash run.sh
 - Serve them locally: `nextstrain view results/`
 
 ## Notes
-- Each build filters by `pango_lineage in {pango_lineage}` (expanded list).
+- Each build filters by `pangolin_lineage in {pangolin_lineage}` (expanded list).
 - You can add or remove families at run-time via `LINEAGE_PREFIXES="..."`.
 - We clone `.ncov/` fresh every run to stay current; pin with `NCOV_REF=v13.0.0` for stability.

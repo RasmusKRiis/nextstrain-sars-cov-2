@@ -13,7 +13,7 @@ refine:
 # Subsampling scheme filtered by per-build pango_lineage list
 subsampling:
   by-pango-list:
-    query: --query "(pango_lineage in {pango_lineage})"
+    query: --query "(pangolin_lineage in {pangolin_lineage})"
 
 filter:
   min_length: 28500
