@@ -1,0 +1,142 @@
+IQ-TREE version 3.0.1 for Linux x86 64-bit built May  5 2025
+Developed by Bui Quang Minh, Thomas Wong, Nhan Ly-Trong, Huaiyan Ren
+Contributed by Lam-Tung Nguyen, Dominik Schrempf, Chris Bielow,
+Olga Chernomor, Michael Woodhams, Diep Thi Hoang, Heiko Schmidt
+
+Host:    29549aa39f7a (AVX2, FMA3, 62 GB RAM)
+Command: iqtree --threads-max 4 -s results/XFG/masked_filtered-delim.fasta -m GTR --ninit 2 -n 2 --epsilon 0.05 -T AUTO --redo -ninit 10 -n 4
+Seed:    779367 (Using SPRNG - Scalable Parallel Random Number Generator)
+Time:    Thu Oct 23 13:14:29 2025
+Kernel:  AVX+FMA - auto-detect threads (8 CPU cores detected)
+
+Reading alignment file results/XFG/masked_filtered-delim.fasta ... Fasta format detected
+Reading fasta file: done in 0.0234412 secs using 74.52% CPU
+Alignment most likely contains DNA/RNA sequences
+Constructing alignment: done in 0.0458798 secs using 90.25% CPU
+WARNING: 346 sites contain only gaps or ambiguous characters.
+Alignment has 44 sequences with 29903 columns, 999 distinct patterns
+41 parsimony-informative, 145 singleton sites, 29717 constant sites
+                                        Gap/Ambiguity  Composition  p-value
+Analyzing sequences: done in 6.17746e-05 secs using 55.04% CPU
+   1  Norway_DELIM-0x2f_7827_DELIM-0x2f_2025    5.64%    passed     99.10%
+   2  Norway_DELIM-0x2f_7863_DELIM-0x2f_2025    4.60%    passed     98.04%
+   3  Norway_DELIM-0x2f_8098_DELIM-0x2f_2025    8.12%    passed     99.78%
+   4  Norway_DELIM-0x2f_8114_DELIM-0x2f_2025    4.60%    passed     98.04%
+   5  Norway_DELIM-0x2f_8652_DELIM-0x2f_2025    9.15%    passed     62.55%
+   6  Norway_DELIM-0x2f_8661_DELIM-0x2f_2025    8.54%    passed     99.79%
+   7  Norway_DELIM-0x2f_8667_DELIM-0x2f_2025    6.53%    passed     79.41%
+   8  Norway_DELIM-0x2f_8984_DELIM-0x2f_2025    8.20%    passed     99.53%
+   9  Norway_DELIM-0x2f_8969_DELIM-0x2f_2025    7.76%    passed     98.53%
+  10  Norway_DELIM-0x2f_9046_DELIM-0x2f_2025    6.60%    passed     99.43%
+  11  Norway_DELIM-0x2f_9047_DELIM-0x2f_2025    7.16%    passed     99.40%
+  12  Norway_DELIM-0x2f_9128_DELIM-0x2f_2025    4.76%    passed     82.75%
+  13  Norway_DELIM-0x2f_9138_DELIM-0x2f_2025    5.94%    passed     96.70%
+  14  Norway_DELIM-0x2f_9277_DELIM-0x2f_2025    6.32%    passed     98.59%
+  15  Norway_DELIM-0x2f_9278_DELIM-0x2f_2025    8.77%    passed     99.18%
+  16  Norway_DELIM-0x2f_9279_DELIM-0x2f_2025    7.63%    passed     99.56%
+  17  Norway_DELIM-0x2f_9289_DELIM-0x2f_2025    8.37%    passed     97.24%
+  18  Norway_DELIM-0x2f_9298_DELIM-0x2f_2025    7.59%    passed     99.30%
+  19  Norway_DELIM-0x2f_9335_DELIM-0x2f_2025    6.41%    passed     97.91%
+  20  Norway_DELIM-0x2f_7398_DELIM-0x2f_2025   10.81%    passed     99.46%
+  21  Norway_DELIM-0x2f_9497_DELIM-0x2f_2025    7.79%    passed     98.87%
+  22  Norway_DELIM-0x2f_8094_DELIM-0x2f_2025   23.45%    passed     68.78%
+  23  Norway_DELIM-0x2f_8104_DELIM-0x2f_2025   21.79%    passed     73.93%
+  24  Norway_DELIM-0x2f_8099_DELIM-0x2f_2025   18.33%    passed     78.09%
+  25  Norway_DELIM-0x2f_8115_DELIM-0x2f_2025   21.43%    passed     98.41%
+  26  Norway_DELIM-0x2f_8105_DELIM-0x2f_2025   10.87%    passed     99.05%
+  27  Norway_DELIM-0x2f_8645_DELIM-0x2f_2025   13.08%    passed     99.96%
+  28  Norway_DELIM-0x2f_8656_DELIM-0x2f_2025   13.58%    passed     74.91%
+  29  Norway_DELIM-0x2f_8950_DELIM-0x2f_2025   14.54%    passed     75.98%
+  30  Norway_DELIM-0x2f_8951_DELIM-0x2f_2025   15.97%    passed     95.08%
+  31  Norway_DELIM-0x2f_8953_DELIM-0x2f_2025   10.29%    passed     98.66%
+  32  Norway_DELIM-0x2f_8967_DELIM-0x2f_2025   22.69%    passed     86.12%
+  33  Norway_DELIM-0x2f_8955_DELIM-0x2f_2025   15.51%    passed     85.34%
+  34  Norway_DELIM-0x2f_8970_DELIM-0x2f_2025   13.81%    passed     91.32%
+  35  Norway_DELIM-0x2f_8972_DELIM-0x2f_2025   12.55%    passed     99.53%
+  36  Norway_DELIM-0x2f_9041_DELIM-0x2f_2025   19.07%    passed     86.89%
+  37  Norway_DELIM-0x2f_8956_DELIM-0x2f_2025   14.60%    passed     99.34%
+  38  Norway_DELIM-0x2f_9142_DELIM-0x2f_2025   21.90%    passed     79.93%
+  39  Norway_DELIM-0x2f_8973_DELIM-0x2f_2025   13.01%    passed     99.69%
+  40  Norway_DELIM-0x2f_9222_DELIM-0x2f_2025   10.80%    passed     93.46%
+  41  Norway_DELIM-0x2f_9305_DELIM-0x2f_2025   16.44%    passed     97.98%
+  42  Norway_DELIM-0x2f_9502_DELIM-0x2f_2025   15.67%    passed     82.03%
+  43  Norway_DELIM-0x2f_9486_DELIM-0x2f_2025   11.32%    passed     96.66%
+  44  Norway_DELIM-0x2f_9299_DELIM-0x2f_2025   21.11%    passed     89.13%
+****  TOTAL                                    11.89%  0 sequences failed composition chi2 test (p-value<5%; df=3)
+Checking for duplicate sequences: done in 0.000236029 secs using 99.14% CPU
+
+Create initial parsimony tree by phylogenetic likelihood library (PLL)... 0.002 seconds
+
+NOTE: 1 MB RAM (0 GB) is required!
+Measuring multi-threading efficiency up to 4 CPU cores
+Increase to 10 rounds for branch lengths
+449 trees examined
+Threads: 1 / Time: 4.006 sec / Speedup: 1.000 / Efficiency: 100% / LogL: -42993
+Threads: 2 / Time: 5.944 sec / Speedup: 0.674 / Efficiency: 34% / LogL: -42993
+Determining AUTO threadcount: done in 9.95023 secs using 155.8% CPU
+BEST NUMBER OF THREADS: 1
+
+Estimate model parameters (epsilon = 0.500)
+1. Initial log-likelihood: -42152.292
+2. Current log-likelihood: -42042.551
+3. Current log-likelihood: -42008.926
+Optimal log-likelihood: -42008.891
+Rate parameters:  A-C: 0.30100  A-G: 1.12187  A-T: 0.18727  C-G: 0.35278  C-T: 5.88141  G-T: 1.00000
+Base frequencies:  A: 0.300  C: 0.182  G: 0.195  T: 0.323
+Parameters optimization took 3 rounds (0.077 sec)
+Wrote distance file to... 
+Computing ML distances based on estimated model parameters...
+Calculating distance matrix: done in 0.00446219 secs using 99.82% CPU
+Computing ML distances took 0.004578 sec (of wall-clock time) 0.004571 sec (of CPU time)
+Setting up auxiliary I and S matrices: done in 0.000189723 secs
+Constructing RapidNJ tree: done in 0.000374668 secs using 96.62% CPU
+Computing RapidNJ tree took 0.000653 sec (of wall-clock time) 0.000445 sec (of CPU time)
+Log-likelihood of RapidNJ tree: -42016.306
+--------------------------------------------------------------------
+|             INITIALIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Generating 8 parsimony trees... 0.010 second
+Computing log-likelihood of 8 initial trees ... 0.018 seconds
+Current best score: -42002.582
+
+Do NNI search on 2 best initial trees
+Optimizing NNI: done in 0.0392512 secs using 94.86% CPU
+Estimate model parameters (epsilon = 0.500)
+BETTER TREE FOUND at iteration 1: -42002.447
+Optimizing NNI: done in 0.02762 secs using 92.78% CPU
+Finish initializing candidate tree set (12)
+Current best tree score: -42002.447 / CPU time: 0.104
+Number of iterations: 2
+--------------------------------------------------------------------
+|               OPTIMIZING CANDIDATE TREE SET                      |
+--------------------------------------------------------------------
+Optimizing NNI: done in 0.0373246 secs using 94.61% CPU
+Optimizing NNI: done in 0.0357414 secs using 88.51% CPU
+TREE SEARCH COMPLETED AFTER 4 ITERATIONS / Time: 0h:0m:10s
+
+--------------------------------------------------------------------
+|                    FINALIZING TREE SEARCH                        |
+--------------------------------------------------------------------
+Performs final model parameters optimization
+Estimate model parameters (epsilon = 0.050)
+1. Initial log-likelihood: -42002.447
+Optimal log-likelihood: -42002.441
+Rate parameters:  A-C: 0.29824  A-G: 1.11853  A-T: 0.19060  C-G: 0.37010  C-T: 5.88540  G-T: 1.00000
+Base frequencies:  A: 0.300  C: 0.182  G: 0.195  T: 0.323
+Parameters optimization took 1 rounds (0.006 sec)
+BEST SCORE FOUND : -42002.441
+Total tree length: 0.007
+
+Total number of iterations: 4
+CPU time used for tree search: 0.165 sec (0h:0m:0s)
+Wall-clock time used for tree search: 0.179 sec (0h:0m:0s)
+Total CPU time used: 15.817 sec (0h:0m:15s)
+Total wall-clock time used: 10.238 sec (0h:0m:10s)
+
+Analysis results written to: 
+  IQ-TREE report:                results/XFG/masked_filtered-delim.fasta.iqtree
+  Maximum-likelihood tree:       results/XFG/masked_filtered-delim.fasta.treefile
+  Likelihood distances:          results/XFG/masked_filtered-delim.fasta.mldist
+  Screen log file:               results/XFG/masked_filtered-delim.fasta.log
+
+Date and Time: Thu Oct 23 13:14:40 2025

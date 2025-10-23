@@ -1,0 +1,233 @@
+clade	gene	site	alt
+19A	nuc	8782	C
+19A	nuc	14408	C
+19B	nuc	8782	T
+19B	nuc	28144	C
+20A	clade	19A
+20A	nuc	14408	T
+20A	nuc	23403	G
+20B	clade	20A
+20B	nuc	28881	A
+20B	nuc	28882	A
+20C	clade	20A
+20C	nuc	1059	T
+20C	nuc	25563	T
+20D	clade	20B
+20D	nuc	4002	T
+20D	nuc	10097	A
+20D	nuc	13536	T
+20D	nuc	23731	T
+20E	clade	20A
+20E	nuc	22227	T
+20E	nuc	28932	T
+20E	nuc	29645	T
+20F	clade	20B
+20F	nuc	1163	T
+20F	nuc	7540	C
+20F	nuc	16647	T
+20F	nuc	18555	T
+20F	nuc	22992	A
+20F	nuc	23401	A
+20G	clade	20C
+20G	nuc	10319	T
+20G	nuc	18424	G
+20G	nuc	25907	T
+20G	nuc	27964	T
+20G	nuc	28472	T
+20G	nuc	28869	T
+20H (Beta)	clade	20C
+20H (Beta)	nuc	23012	A
+20H (Beta)	nuc	23063	T
+20H (Beta)	nuc	23403	G
+20H (Beta)	nuc	26456	T
+20I (Alpha)	clade	20B
+20I (Alpha)	nuc	14676	T
+20I (Alpha)	nuc	15279	T
+20I (Alpha)	nuc	23063	T
+20J (Gamma)	clade	20B
+20J (Gamma)	nuc	733	C
+20J (Gamma)	nuc	2749	T
+20J (Gamma)	nuc	3828	T
+20J (Gamma)	nuc	5648	C
+20J (Gamma)	nuc	12778	T
+20J (Gamma)	nuc	13860	T
+21A (Delta)	clade	20A
+21A (Delta)	nuc	21618	G
+21A (Delta)	nuc	26767	C
+21A (Delta)	nuc	28461	G
+21B (Kappa)	clade	20A
+21B (Kappa)	nuc	17523	T
+21B (Kappa)	nuc	22917	G
+21B (Kappa)	nuc	23012	C
+21B (Kappa)	nuc	27638	C
+21B (Kappa)	nuc	28881	T
+21B (Kappa)	nuc	29402	T
+21C (Epsilon)	clade	20C
+21C (Epsilon)	nuc	17014	T
+21C (Epsilon)	nuc	21600	T
+21C (Epsilon)	nuc	22018	T
+21C (Epsilon)	nuc	22917	G
+21D (Eta)	clade	20A
+21D (Eta)	nuc	14407	T
+21D (Eta)	nuc	20724	G
+21D (Eta)	nuc	23593	C
+21D (Eta)	nuc	24224	C
+21D (Eta)	nuc	24748	T
+21E (Theta)	clade	20B
+21E (Theta)	nuc	12049	T
+21E (Theta)	nuc	23341	C
+21E (Theta)	nuc	23604	A
+21E (Theta)	nuc	24187	A
+21E (Theta)	nuc	24836	A
+21F (Iota)	clade	20C
+21F (Iota)	nuc	16500	C
+21F (Iota)	nuc	20262	G
+21F (Iota)	nuc	21575	T
+21F (Iota)	nuc	22320	G
+21G (Lambda)	clade	20D
+21G (Lambda)	nuc	21786	T
+21G (Lambda)	nuc	21789	T
+21G (Lambda)	nuc	22917	A
+21G (Lambda)	nuc	23031	C
+21H (Mu)	clade	20A
+21H (Mu)	nuc	3428	G
+21H (Mu)	nuc	4878	T
+21H (Mu)	nuc	11451	G
+21H (Mu)	nuc	13057	T
+21H (Mu)	nuc	17491	T
+21H (Mu)	nuc	27925	A
+21I (Delta)	clade	21A (Delta)
+21I (Delta)	nuc	5184	T
+21I (Delta)	nuc	9891	T
+21I (Delta)	nuc	22227	T
+21J (Delta)	clade	21A (Delta)
+21J (Delta)	nuc	11332	G
+21J (Delta)	nuc	19220	T
+21K (BA.1)	clade	21M (Omicron)
+21K (BA.1)	nuc	15240	T
+21K (BA.1)	nuc	23202	A
+21K (BA.1)	nuc	23525	T
+21K (BA.1)	nuc	27259	C
+21L (BA.2)	clade	21M (Omicron)
+21L (BA.2)	nuc	21618	T
+21L (BA.2)	nuc	22775	A
+21M (Omicron)	clade	20B
+21M (Omicron)	nuc	18163	G
+21M (Omicron)	nuc	23599	G
+22A (BA.4)	clade	21L (BA.2)
+22A (BA.4)	nuc	12160	A
+22A (BA.4)	nuc	9866	C
+22A (BA.4)	nuc	28724	T
+22B (BA.5)	clade	21L (BA.2)
+22B (BA.5)	nuc	12160	A
+22B (BA.5)	nuc	9866	C
+22B (BA.5)	nuc	27259	A
+22C (BA.2.12.1)	clade	21L (BA.2)
+22C (BA.2.12.1)	nuc	22917	A
+22C (BA.2.12.1)	nuc	23673	T
+22D (BA.2.75)	clade	21L (BA.2)
+22D (BA.2.75)	nuc	3796	T
+22D (BA.2.75)	nuc	26275	G
+22E (BQ.1)	clade	22B (BA.5)
+22E (BQ.1)	nuc	14257	C
+22E (BQ.1)	nuc	16935	A
+22E (BQ.1)	nuc	28312	T
+22E (BQ.1)	nuc	22942	A
+22F (XBB)	clade	21L (BA.2)
+22F (XBB)	nuc	15461	A
+22F (XBB)	nuc	17859	C
+22F (XBB)	nuc	23019	C
+22F (XBB)	nuc	26275	G
+23A (XBB.1.5)	clade	22F (XBB)
+23A (XBB.1.5)	nuc	22317	T
+23A (XBB.1.5)	nuc	23018	C
+23A (XBB.1.5)	nuc	27915	T
+23B (XBB.1.16)	clade	22F (XBB)
+23B (XBB.1.16)	nuc	12730	A
+23B (XBB.1.16)	nuc	14856	G
+23B (XBB.1.16)	nuc	18703	T
+23B (XBB.1.16)	nuc	28447	G
+23C (CH.1.1)	clade	22D (BA.2.75)
+23C (CH.1.1)	nuc	3857	A
+23C (CH.1.1)	nuc	20741	G
+23C (CH.1.1)	nuc	22599	C
+23C (CH.1.1)	nuc	22917	G
+23C (CH.1.1)	nuc	22893	C
+23C (CH.1.1)	nuc	23019	C
+23D (XBB.1.9)	clade	22F (XBB)
+23D (XBB.1.9)	nuc	5720	A
+23D (XBB.1.9)	nuc	12789	T
+23D (XBB.1.9)	nuc	28297	C
+23E (XBB.2.3)	clade	22F (XBB)
+23E (XBB.2.3)	nuc	4234	T
+23E (XBB.2.3)	nuc	23123	T
+23E (XBB.2.3)	nuc	27431	T
+23F (EG.5.1)	clade	23D (XBB.1.9)
+23F (EG.5.1)	nuc	2334	T
+23F (EG.5.1)	nuc	9693	T
+23F (EG.5.1)	nuc	21718	T
+23F (EG.5.1)	nuc	22480	T
+23F (EG.5.1)	nuc	22930	A
+23G (XBB.1.5.70)	clade	23A (XBB.1.5)
+23G (XBB.1.5.70)	nuc	8737	C
+23G (XBB.1.5.70)	nuc	25045	G
+23G (XBB.1.5.70)	nuc	28005	T
+23H (HK.3)	clade	23F (EG.5.1)
+23H (HK.3)	nuc	13627	A
+23H (HK.3)	nuc	22927	T
+23I (BA.2.86)	clade	21L (BA.2)
+23I (BA.2.86)	nuc	897	A
+23I (BA.2.86)	nuc	15756	A
+23I (BA.2.86)	nuc	28958	A
+24A (JN.1)	clade	23I (BA.2.86)
+24A (JN.1)	nuc	11727	A
+24A (JN.1)	nuc	22926	C
+24A (JN.1)	nuc	27810	C
+24B (JN.1.11.1)	clade	24A (JN.1)
+24B (JN.1.11.1)	nuc	7113	T
+24B (JN.1.11.1)	nuc	17334	T
+24B (JN.1.11.1)	nuc	22928	C
+24B (JN.1.11.1)	nuc	24872	T
+24C (KP.3)	clade	24B (JN.1.11.1)
+24C (KP.3)	nuc	23039	G
+24D (XDV.1)	clade	21L (BA.2)
+24D (XDV.1)	nuc	1170	T
+24D (XDV.1)	nuc	11572	T
+24D (XDV.1)	nuc	12473	T
+24D (XDV.1)	nuc	15939	C
+24E (KP.3.1.1)	clade	24C (KP.3)
+24E (KP.3.1.1)	nuc	13121	T
+24E (KP.3.1.1)	nuc	15372	T
+24E (KP.3.1.1)	nuc	19722	G
+24F (XEC)	clade	24A (JN.1)
+24F (XEC)	nuc	18657	T
+24F (XEC)	nuc	19716	T
+24F (XEC)	nuc	21627	A
+24F (XEC)	nuc	21738	C
+24F (XEC)	nuc	22928	C
+24F (XEC)	nuc	23039	G
+24F (XEC)	nuc	24872	T
+24G (KP.2.3)	clade	24B (JN.1.11.1)
+24G (KP.2.3)	nuc	22599	C
+24G (KP.2.3)	nuc	25593	T
+24H (LF.7)	clade	24A (JN.1)
+24H (LF.7)	nuc	16600	C
+24H (LF.7)	nuc	12892	A
+24H (LF.7)	nuc	4214	T
+24I (MV.1)	clade	24A (JN.1)
+24I (MV.1)	nuc	936	T
+24I (MV.1)	nuc	7393	T
+24I (MV.1)	nuc	22995	C
+25A (LP.8.1)	clade	24B (JN.1.11.1)
+25A (LP.8.1)	nuc	4999	T
+25A (LP.8.1)	nuc	22110	A
+25A (LP.8.1)	nuc	22132	T
+25A (LP.8.1)	nuc	25925	T
+25B (NB.1.8.1)	clade	24D (XDV.1)
+25B (NB.1.8.1)	nuc	2095	A
+25B (NB.1.8.1)	nuc	15573	C
+25B (NB.1.8.1)	nuc	15960	T
+25B (NB.1.8.1)	nuc	22865	T
+25C (XFG)	clade	24A (JN.1)
+25C (XFG)	nuc	4214	C
+25C (XFG)	nuc	8350	C

@@ -1,0 +1,140 @@
+{
+  "generated_by": {
+    "program": "augur",
+    "version": "32.0.0"
+  },
+  "nodes": {
+    "Norway/7398/2025": {
+      "mlr_lineage_fitness": 1.319
+    },
+    "Norway/7827/2025": {
+      "mlr_lineage_fitness": 1.319
+    },
+    "Norway/7863/2025": {
+      "mlr_lineage_fitness": 1.319
+    },
+    "Norway/8094/2025": {
+      "mlr_lineage_fitness": null
+    },
+    "Norway/8098/2025": {
+      "mlr_lineage_fitness": null
+    },
+    "Norway/8099/2025": {
+      "mlr_lineage_fitness": 1.319
+    },
+    "Norway/8104/2025": {
+      "mlr_lineage_fitness": null
+    },
+    "Norway/8105/2025": {
+      "mlr_lineage_fitness": null
+    },
+    "Norway/8114/2025": {
+      "mlr_lineage_fitness": null
+    },
+    "Norway/8115/2025": {
+      "mlr_lineage_fitness": null
+    },
+    "Norway/8645/2025": {
+      "mlr_lineage_fitness": 1.319
+    },
+    "Norway/8652/2025": {
+      "mlr_lineage_fitness": null
+    },
+    "Norway/8656/2025": {
+      "mlr_lineage_fitness": 1.284
+    },
+    "Norway/8661/2025": {
+      "mlr_lineage_fitness": null
+    },
+    "Norway/8667/2025": {
+      "mlr_lineage_fitness": null
+    },
+    "Norway/8950/2025": {
+      "mlr_lineage_fitness": 1.347
+    },
+    "Norway/8951/2025": {
+      "mlr_lineage_fitness": null
+    },
+    "Norway/8953/2025": {
+      "mlr_lineage_fitness": null
+    },
+    "Norway/8955/2025": {
+      "mlr_lineage_fitness": 1.296
+    },
+    "Norway/8956/2025": {
+      "mlr_lineage_fitness": null
+    },
+    "Norway/8967/2025": {
+      "mlr_lineage_fitness": null
+    },
+    "Norway/8969/2025": {
+      "mlr_lineage_fitness": 1.319
+    },
+    "Norway/8970/2025": {
+      "mlr_lineage_fitness": 1.347
+    },
+    "Norway/8972/2025": {
+      "mlr_lineage_fitness": 1.319
+    },
+    "Norway/8973/2025": {
+      "mlr_lineage_fitness": null
+    },
+    "Norway/8984/2025": {
+      "mlr_lineage_fitness": null
+    },
+    "Norway/9041/2025": {
+      "mlr_lineage_fitness": 1.319
+    },
+    "Norway/9046/2025": {
+      "mlr_lineage_fitness": 1.319
+    },
+    "Norway/9047/2025": {
+      "mlr_lineage_fitness": 1.318
+    },
+    "Norway/9128/2025": {
+      "mlr_lineage_fitness": null
+    },
+    "Norway/9138/2025": {
+      "mlr_lineage_fitness": 1.33
+    },
+    "Norway/9142/2025": {
+      "mlr_lineage_fitness": 1.373
+    },
+    "Norway/9222/2025": {
+      "mlr_lineage_fitness": 1.318
+    },
+    "Norway/9277/2025": {
+      "mlr_lineage_fitness": 1.296
+    },
+    "Norway/9278/2025": {
+      "mlr_lineage_fitness": null
+    },
+    "Norway/9279/2025": {
+      "mlr_lineage_fitness": null
+    },
+    "Norway/9289/2025": {
+      "mlr_lineage_fitness": null
+    },
+    "Norway/9298/2025": {
+      "mlr_lineage_fitness": 1.319
+    },
+    "Norway/9299/2025": {
+      "mlr_lineage_fitness": null
+    },
+    "Norway/9305/2025": {
+      "mlr_lineage_fitness": 1.296
+    },
+    "Norway/9335/2025": {
+      "mlr_lineage_fitness": 1.33
+    },
+    "Norway/9486/2025": {
+      "mlr_lineage_fitness": 1.347
+    },
+    "Norway/9497/2025": {
+      "mlr_lineage_fitness": 1.373
+    },
+    "Norway/9502/2025": {
+      "mlr_lineage_fitness": null
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "branches": {
+    "NODE_0000003": {
+      "labels": {
+        "clade": "24F (XEC)"
+      }
+    }
+  },
+  "generated_by": {
+    "program": "augur",
+    "version": "32.0.0"
+  },
+  "nodes": {
+    "NODE_0000000": {
+      "clade_membership": "24F (XEC)"
+    },
+    "NODE_0000001": {
+      "clade_membership": "24F (XEC)"
+    },
+    "NODE_0000002": {
+      "clade_membership": "24F (XEC)"
+    },
+    "NODE_0000003": {
+      "clade_membership": "24F (XEC)"
+    },
+    "NODE_0000004": {
+      "clade_membership": "24F (XEC)"
+    },
+    "Norway/2192/2025": {
+      "clade_membership": "24F (XEC)"
+    },
+    "Norway/26/2025": {
+      "clade_membership": "24F (XEC)"
+    },
+    "Norway/7265/2025": {
+      "clade_membership": "24F (XEC)"
+    },
+    "Norway/7856/2025": {
+      "clade_membership": "24F (XEC)"
+    },
+    "Norway/8021/2025": {
+      "clade_membership": "24F (XEC)"
+    },
+    "Norway/8106/2025": {
+      "clade_membership": "24F (XEC)"
+    }
+  }
+}

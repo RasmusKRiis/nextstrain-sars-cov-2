@@ -1,0 +1,153 @@
+{
+  "alignment": "results/XEC/filtered.fasta",
+  "clock": {
+    "intercept": -1.6198995594909158,
+    "rate": 0.0008,
+    "rtt_Tmrca": 2024.8744493636445
+  },
+  "generated_by": {
+    "program": "augur",
+    "version": "32.0.0"
+  },
+  "input_tree": "results/XEC/tree_raw.nwk",
+  "nodes": {
+    "NODE_0000000": {
+      "branch_length": 0,
+      "clock_length": 1.1019171317505128e-05,
+      "date": "2024-12-06",
+      "date_inferred": true,
+      "mutation_length": 0,
+      "num_date_confidence": [
+        2024.8970398426677,
+        2024.9597545596655
+      ],
+      "numdate": 2024.9316148337546
+    },
+    "NODE_0000001": {
+      "branch_length": 1,
+      "clock_length": 1.4018904388884068e-05,
+      "date": "2024-12-13",
+      "date_inferred": true,
+      "mutation_length": 1,
+      "num_date_confidence": [
+        2024.9153105778066,
+        2024.9750280376254
+      ],
+      "numdate": 2024.9491384642406
+    },
+    "NODE_0000002": {
+      "branch_length": 1,
+      "clock_length": 1.4723767584344841e-05,
+      "date": "2024-12-20",
+      "date_inferred": true,
+      "mutation_length": 1,
+      "num_date_confidence": [
+        2024.9280214797527,
+        2024.9889894895211
+      ],
+      "numdate": 2024.9675431737212
+    },
+    "NODE_0000003": {
+      "branch_length": 0,
+      "clock_length": 0.001,
+      "date": "2024-12-01",
+      "date_inferred": true,
+      "mutation_length": 0,
+      "num_date_confidence": [
+        2024.8845345600425,
+        2024.9624238065667
+      ],
+      "numdate": 2024.9178408696077
+    },
+    "NODE_0000004": {
+      "branch_length": 0,
+      "clock_length": 1.5680994593234064e-05,
+      "date": "2024-12-20",
+      "date_inferred": true,
+      "mutation_length": 0,
+      "num_date_confidence": [
+        2024.9164176421348,
+        2025.007622147234
+      ],
+      "numdate": 2024.9687397074822
+    },
+    "Norway/2192/2025": {
+      "branch_length": 5,
+      "clock_length": 0.00010500823401416533,
+      "date": "2025-02-06",
+      "date_inferred": false,
+      "mutation_length": 5,
+      "num_date_confidence": [
+        2025.1,
+        2025.1
+      ],
+      "numdate": 2025.1,
+      "raw_date": "2025-02-06"
+    },
+    "Norway/26/2025": {
+      "branch_length": 5,
+      "clock_length": 3.802025554368175e-05,
+      "date": "2025-01-06",
+      "date_inferred": false,
+      "mutation_length": 5,
+      "num_date_confidence": [
+        2025.0150684931507,
+        2025.0150684931507
+      ],
+      "numdate": 2025.0150684931507,
+      "raw_date": "2025-01-06"
+    },
+    "Norway/7265/2025": {
+      "branch_length": 11,
+      "clock_length": 0.00034706135143414303,
+      "date": "2025-05-27",
+      "date_inferred": false,
+      "mutation_length": 11,
+      "num_date_confidence": [
+        2025.4013698630138,
+        2025.4013698630138
+      ],
+      "numdate": 2025.4013698630138,
+      "raw_date": "2025-05-27"
+    },
+    "Norway/7856/2025": {
+      "branch_length": 9,
+      "clock_length": 0.0003767890559320204,
+      "date": "2025-06-10",
+      "date_inferred": false,
+      "mutation_length": 9,
+      "num_date_confidence": [
+        2025.4397260273972,
+        2025.4397260273972
+      ],
+      "numdate": 2025.4397260273972,
+      "raw_date": "2025-06-10"
+    },
+    "Norway/8021/2025": {
+      "branch_length": 13,
+      "clock_length": 0.00045470813299635624,
+      "date": "2025-07-02",
+      "date_inferred": false,
+      "mutation_length": 13,
+      "num_date_confidence": [
+        2025.5,
+        2025.5
+      ],
+      "numdate": 2025.5,
+      "raw_date": "2025-07-02"
+    },
+    "Norway/8106/2025": {
+      "branch_length": 15,
+      "clock_length": 0.00047668620842347285,
+      "date": "2025-07-07",
+      "date_inferred": false,
+      "mutation_length": 15,
+      "num_date_confidence": [
+        2025.513698630137,
+        2025.513698630137
+      ],
+      "numdate": 2025.513698630137,
+      "raw_date": "2025-07-07"
+    }
+  }
+}

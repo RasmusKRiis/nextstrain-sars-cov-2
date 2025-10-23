@@ -154,11 +154,6 @@
         ]
       },
       {
-        "key": "S1_mutations",
-        "title": "S1_mutations",
-        "type": "continuous"
-      },
-      {
         "key": "recency",
         "title": "recency",
         "type": "categorical",
@@ -174,55 +169,34 @@
         ]
       },
       {
+        "key": "epiweek",
+        "title": "epiweek",
+        "type": "categorical"
+      },
+      {
         "key": "emerging_lineage",
         "title": "emerging_lineage",
         "type": "categorical"
       },
       {
+        "key": "S1_mutations",
+        "title": "S1_mutations",
+        "type": "continuous"
+      },
+      {
         "key": "mlr_lineage_fitness",
         "title": "mlr_lineage_fitness",
         "type": "boolean"
-      },
-      {
-        "key": "epiweek",
-        "title": "epiweek",
-        "type": "categorical",
-        "scale": [
-          [
-            "202502",
-            "#511EA8"
-          ],
-          [
-            "202506",
-            "#3E5CD0"
-          ],
-          [
-            "202522",
-            "#DDA83C"
-          ],
-          [
-            "202524",
-            "#E69036"
-          ],
-          [
-            "202527",
-            "#E2592C"
-          ],
-          [
-            "202528",
-            "#DF4428"
-          ]
-        ]
       }
     ],
     "filters": [
-      "emerging_lineage",
-      "country",
       "recency",
-      "clade_membership",
       "pango_lineage",
       "epiweek",
-      "mlr_lineage_fitness"
+      "emerging_lineage",
+      "clade_membership",
+      "mlr_lineage_fitness",
+      "country"
     ],
     "geo_resolutions": [
       {
@@ -237,21 +211,21 @@
       {
         "key": "division",
         "demes": {
+          "Nordland": {
+            "latitude": 67.27564050000001,
+            "longitude": 13.862360639913621
+          },
           "Oslo": {
             "latitude": 59.903687,
             "longitude": 10.7497
-          },
-          "Vestland": {
-            "latitude": 60.9291011,
-            "longitude": 6.107886941976156
           },
           "Innlandet": {
             "latitude": 61.26810555,
             "longitude": 10.485458802304304
           },
-          "Nordland": {
-            "latitude": 67.27564050000001,
-            "longitude": 13.862360639913621
+          "Vestland": {
+            "latitude": 60.9291011,
+            "longitude": 6.107886941976156
           }
         }
       }
@@ -267,23 +241,11 @@
     "node_attrs": {
       "div": 0,
       "num_date": {
-        "value": 2024.932,
+        "value": 2024.918,
         "confidence": [
-          2024.087,
-          2024.966
+          2024.885,
+          2024.962
         ]
-      },
-      "S1_mutations": {
-        "value": 0.0
-      },
-      "country": {
-        "value": "Norway"
-      },
-      "emerging_lineage": {
-        "value": "24A"
-      },
-      "clade_membership": {
-        "value": "24F (XEC)"
       },
       "pango_lineage": {
         "value": "XEC.18",
@@ -296,6 +258,18 @@
           "XEC.38": 0.0326
         },
         "entropy": 1.09
+      },
+      "emerging_lineage": {
+        "value": "24A"
+      },
+      "clade_membership": {
+        "value": "24F (XEC)"
+      },
+      "S1_mutations": {
+        "value": 0.0
+      },
+      "country": {
+        "value": "Norway"
       }
     },
     "branch_attrs": {
@@ -323,20 +297,8 @@
             "author": "Kathrine Stene-Johansen, Andreas Rohringer, Kamilla Heddeland Instefjord, Hilde Elshaug, Garcia Llorente Ignacio, Jon Br\u00e5te, Engebretsen Serina Beate, Pedersen Benedikte Nevjen, Atiya R Ali, Marie Paulsen Madsen, Rasmus Riis Kopperud, Karoline Bragstad, Olav Hungnes",
             "value": "Kathrine Stene-Johansen, Andreas Rohringer, Kamilla Heddeland Instefjord, Hilde Elshaug, Garcia Llorente Ignacio, Jon Br\u00e5te, Engebretsen Serina Beate, Pedersen Benedikte Nevjen, Atiya R Ali, Marie Paulsen Madsen, Rasmus Riis Kopperud, Karoline Bragstad, Olav Hungnes"
           },
-          "S1_mutations": {
-            "value": 3.0
-          },
           "recency": {
             "value": "One month ago"
-          },
-          "country": {
-            "value": "Norway"
-          },
-          "emerging_lineage": {
-            "value": "24A"
-          },
-          "clade_membership": {
-            "value": "24F (XEC)"
           },
           "pango_lineage": {
             "value": "XEC.18",
@@ -347,6 +309,18 @@
           },
           "epiweek": {
             "value": "202528"
+          },
+          "emerging_lineage": {
+            "value": "24A"
+          },
+          "clade_membership": {
+            "value": "24F (XEC)"
+          },
+          "S1_mutations": {
+            "value": 3.0
+          },
+          "country": {
+            "value": "Norway"
           },
           "division": {
             "value": "Oslo"
@@ -398,23 +372,11 @@
         "node_attrs": {
           "div": 0,
           "num_date": {
-            "value": 2024.944,
+            "value": 2024.932,
             "confidence": [
-              2024.088,
-              2024.969
+              2024.897,
+              2024.96
             ]
-          },
-          "S1_mutations": {
-            "value": 0.0
-          },
-          "country": {
-            "value": "Norway"
-          },
-          "emerging_lineage": {
-            "value": "24A"
-          },
-          "clade_membership": {
-            "value": "24F (XEC)"
           },
           "pango_lineage": {
             "value": "XEC.32.1",
@@ -427,6 +389,18 @@
               "XEC": 0.0645
             },
             "entropy": 1.396
+          },
+          "emerging_lineage": {
+            "value": "24A"
+          },
+          "clade_membership": {
+            "value": "24F (XEC)"
+          },
+          "S1_mutations": {
+            "value": 0.0
+          },
+          "country": {
+            "value": "Norway"
           }
         },
         "branch_attrs": {
@@ -450,20 +424,8 @@
                 "author": "Kathrine Stene-Johansen, Andreas Rohringer, Kamilla Heddeland Instefjord, Hilde Elshaug, Garcia Llorente Ignacio, Jon Br\u00e5te, Engebretsen Serina Beate, Pedersen Benedikte Nevjen, Atiya R Ali, Marie Paulsen Madsen, Rasmus Riis Kopperud, Karoline Bragstad, Olav Hungnes",
                 "value": "Kathrine Stene-Johansen, Andreas Rohringer, Kamilla Heddeland Instefjord, Hilde Elshaug, Garcia Llorente Ignacio, Jon Br\u00e5te, Engebretsen Serina Beate, Pedersen Benedikte Nevjen, Atiya R Ali, Marie Paulsen Madsen, Rasmus Riis Kopperud, Karoline Bragstad, Olav Hungnes"
               },
-              "S1_mutations": {
-                "value": 1.0
-              },
               "recency": {
                 "value": "Older"
-              },
-              "country": {
-                "value": "Norway"
-              },
-              "emerging_lineage": {
-                "value": "24A"
-              },
-              "clade_membership": {
-                "value": "24F (XEC)"
               },
               "pango_lineage": {
                 "value": "XEC.32.1",
@@ -474,6 +436,18 @@
               },
               "epiweek": {
                 "value": "202527"
+              },
+              "emerging_lineage": {
+                "value": "24A"
+              },
+              "clade_membership": {
+                "value": "24F (XEC)"
+              },
+              "S1_mutations": {
+                "value": 1.0
+              },
+              "country": {
+                "value": "Norway"
               },
               "division": {
                 "value": "Innlandet"
@@ -522,23 +496,11 @@
             "node_attrs": {
               "div": 1,
               "num_date": {
-                "value": 2024.952,
+                "value": 2024.949,
                 "confidence": [
-                  2024.257,
-                  2024.979
+                  2024.915,
+                  2024.975
                 ]
-              },
-              "S1_mutations": {
-                "value": 1.0
-              },
-              "country": {
-                "value": "Norway"
-              },
-              "emerging_lineage": {
-                "value": "24A"
-              },
-              "clade_membership": {
-                "value": "24F (XEC)"
               },
               "pango_lineage": {
                 "value": "XEC.32.1",
@@ -551,6 +513,18 @@
                   "XEC.18": 0.0979
                 },
                 "entropy": 1.77
+              },
+              "emerging_lineage": {
+                "value": "24A"
+              },
+              "clade_membership": {
+                "value": "24F (XEC)"
+              },
+              "S1_mutations": {
+                "value": 1.0
+              },
+              "country": {
+                "value": "Norway"
               }
             },
             "branch_attrs": {
@@ -572,23 +546,11 @@
                 "node_attrs": {
                   "div": 1,
                   "num_date": {
-                    "value": 2024.97,
+                    "value": 2024.969,
                     "confidence": [
-                      2024.257,
-                      2025.011
+                      2024.916,
+                      2025.008
                     ]
-                  },
-                  "S1_mutations": {
-                    "value": 1.0
-                  },
-                  "country": {
-                    "value": "Norway"
-                  },
-                  "emerging_lineage": {
-                    "value": "24A"
-                  },
-                  "clade_membership": {
-                    "value": "24F (XEC)"
                   },
                   "pango_lineage": {
                     "value": "XEC.38",
@@ -601,86 +563,24 @@
                       "XEC.18": 0.0277
                     },
                     "entropy": 1.295
+                  },
+                  "emerging_lineage": {
+                    "value": "24A"
+                  },
+                  "clade_membership": {
+                    "value": "24F (XEC)"
+                  },
+                  "S1_mutations": {
+                    "value": 1.0
+                  },
+                  "country": {
+                    "value": "Norway"
                   }
                 },
                 "branch_attrs": {
                   "mutations": {}
                 },
                 "children": [
-                  {
-                    "name": "Norway/7856/2025",
-                    "node_attrs": {
-                      "div": 10,
-                      "num_date": {
-                        "value": 2025.44,
-                        "confidence": [
-                          2025.44,
-                          2025.44
-                        ],
-                        "inferred": false
-                      },
-                      "url": "https://www.gisaid.org/",
-                      "author": {
-                        "author": "Kathrine Stene-Johansen, Andreas Rohringer, Kamilla Heddeland Instefjord, Hilde Elshaug, Garcia Llorente Ignacio, Jon Br\u00e5te, Engebretsen Serina Beate, Pedersen Benedikte Nevjen, Atiya R Ali, Marie Paulsen Madsen, Rasmus Riis Kopperud, Karoline Bragstad, Olav Hungnes",
-                        "value": "Kathrine Stene-Johansen, Andreas Rohringer, Kamilla Heddeland Instefjord, Hilde Elshaug, Garcia Llorente Ignacio, Jon Br\u00e5te, Engebretsen Serina Beate, Pedersen Benedikte Nevjen, Atiya R Ali, Marie Paulsen Madsen, Rasmus Riis Kopperud, Karoline Bragstad, Olav Hungnes"
-                      },
-                      "S1_mutations": {
-                        "value": 2.0
-                      },
-                      "recency": {
-                        "value": "Older"
-                      },
-                      "country": {
-                        "value": "Norway"
-                      },
-                      "emerging_lineage": {
-                        "value": "24A"
-                      },
-                      "clade_membership": {
-                        "value": "24F (XEC)"
-                      },
-                      "pango_lineage": {
-                        "value": "XEC",
-                        "confidence": {
-                          "XEC": 1.0
-                        },
-                        "entropy": -1e-12
-                      },
-                      "epiweek": {
-                        "value": "202524"
-                      },
-                      "mlr_lineage_fitness": {
-                        "value": 1.0
-                      },
-                      "division": {
-                        "value": "Nordland"
-                      }
-                    },
-                    "branch_attrs": {
-                      "mutations": {
-                        "nuc": [
-                          "C1150T",
-                          "C2902T",
-                          "C7420T",
-                          "C10156T",
-                          "G14346A",
-                          "C15738T",
-                          "G22917T",
-                          "G22918T",
-                          "C25609T"
-                        ],
-                        "S": [
-                          "W452F"
-                        ],
-                        "ORF3a": [
-                          "L73F"
-                        ]
-                      },
-                      "labels": {
-                        "aa": "S: W452F; ORF3a: L73F"
-                      }
-                    }
-                  },
                   {
                     "name": "Norway/2192/2025",
                     "node_attrs": {
@@ -698,20 +598,8 @@
                         "author": "Kathrine Stene-Johansen, Andreas Rohringer, Kamilla Heddeland Instefjord, Hilde Elshaug, Garcia Llorente Ignacio, Jon Br\u00e5te, Engebretsen Serina Beate, Pedersen Benedikte Nevjen, Atiya R Ali, Marie Paulsen Madsen, Rasmus Riis Kopperud, Karoline Bragstad, Olav Hungnes",
                         "value": "Kathrine Stene-Johansen, Andreas Rohringer, Kamilla Heddeland Instefjord, Hilde Elshaug, Garcia Llorente Ignacio, Jon Br\u00e5te, Engebretsen Serina Beate, Pedersen Benedikte Nevjen, Atiya R Ali, Marie Paulsen Madsen, Rasmus Riis Kopperud, Karoline Bragstad, Olav Hungnes"
                       },
-                      "S1_mutations": {
-                        "value": 1.0
-                      },
                       "recency": {
                         "value": "Older"
-                      },
-                      "country": {
-                        "value": "Norway"
-                      },
-                      "emerging_lineage": {
-                        "value": "24A"
-                      },
-                      "clade_membership": {
-                        "value": "24F (XEC)"
                       },
                       "pango_lineage": {
                         "value": "XEC.38",
@@ -722,6 +610,18 @@
                       },
                       "epiweek": {
                         "value": "202506"
+                      },
+                      "emerging_lineage": {
+                        "value": "24A"
+                      },
+                      "clade_membership": {
+                        "value": "24F (XEC)"
+                      },
+                      "S1_mutations": {
+                        "value": 1.0
+                      },
+                      "country": {
+                        "value": "Norway"
                       },
                       "division": {
                         "value": "Akershus"
@@ -751,6 +651,80 @@
                         "aa": "ORF1a: T1521I, M3652T; S: V1264L; ORF7a: P34S"
                       }
                     }
+                  },
+                  {
+                    "name": "Norway/7856/2025",
+                    "node_attrs": {
+                      "div": 10,
+                      "num_date": {
+                        "value": 2025.44,
+                        "confidence": [
+                          2025.44,
+                          2025.44
+                        ],
+                        "inferred": false
+                      },
+                      "url": "https://www.gisaid.org/",
+                      "author": {
+                        "author": "Kathrine Stene-Johansen, Andreas Rohringer, Kamilla Heddeland Instefjord, Hilde Elshaug, Garcia Llorente Ignacio, Jon Br\u00e5te, Engebretsen Serina Beate, Pedersen Benedikte Nevjen, Atiya R Ali, Marie Paulsen Madsen, Rasmus Riis Kopperud, Karoline Bragstad, Olav Hungnes",
+                        "value": "Kathrine Stene-Johansen, Andreas Rohringer, Kamilla Heddeland Instefjord, Hilde Elshaug, Garcia Llorente Ignacio, Jon Br\u00e5te, Engebretsen Serina Beate, Pedersen Benedikte Nevjen, Atiya R Ali, Marie Paulsen Madsen, Rasmus Riis Kopperud, Karoline Bragstad, Olav Hungnes"
+                      },
+                      "recency": {
+                        "value": "Older"
+                      },
+                      "pango_lineage": {
+                        "value": "XEC",
+                        "confidence": {
+                          "XEC": 1.0
+                        },
+                        "entropy": -1e-12
+                      },
+                      "epiweek": {
+                        "value": "202524"
+                      },
+                      "emerging_lineage": {
+                        "value": "24A"
+                      },
+                      "clade_membership": {
+                        "value": "24F (XEC)"
+                      },
+                      "S1_mutations": {
+                        "value": 2.0
+                      },
+                      "mlr_lineage_fitness": {
+                        "value": 1.0
+                      },
+                      "country": {
+                        "value": "Norway"
+                      },
+                      "division": {
+                        "value": "Nordland"
+                      }
+                    },
+                    "branch_attrs": {
+                      "mutations": {
+                        "nuc": [
+                          "C1150T",
+                          "C2902T",
+                          "C7420T",
+                          "C10156T",
+                          "G14346A",
+                          "C15738T",
+                          "G22917T",
+                          "G22918T",
+                          "C25609T"
+                        ],
+                        "S": [
+                          "W452F"
+                        ],
+                        "ORF3a": [
+                          "L73F"
+                        ]
+                      },
+                      "labels": {
+                        "aa": "S: W452F; ORF3a: L73F"
+                      }
+                    }
                   }
                 ]
               },
@@ -759,23 +733,11 @@
                 "node_attrs": {
                   "div": 2,
                   "num_date": {
-                    "value": 2024.97,
+                    "value": 2024.968,
                     "confidence": [
-                      2024.365,
-                      2024.992
+                      2024.928,
+                      2024.989
                     ]
-                  },
-                  "S1_mutations": {
-                    "value": 1.0
-                  },
-                  "country": {
-                    "value": "Norway"
-                  },
-                  "emerging_lineage": {
-                    "value": "24A"
-                  },
-                  "clade_membership": {
-                    "value": "24F (XEC)"
                   },
                   "pango_lineage": {
                     "value": "XEC.2",
@@ -788,6 +750,18 @@
                       "XEC.18": 0.0277
                     },
                     "entropy": 1.295
+                  },
+                  "emerging_lineage": {
+                    "value": "24A"
+                  },
+                  "clade_membership": {
+                    "value": "24F (XEC)"
+                  },
+                  "S1_mutations": {
+                    "value": 1.0
+                  },
+                  "country": {
+                    "value": "Norway"
                   }
                 },
                 "branch_attrs": {
@@ -821,20 +795,8 @@
                         "author": "Kathrine Stene-Johansen, Andreas Rohringer, Kamilla Heddeland Instefjord, Hilde Elshaug, Garcia Llorente Ignacio, Jon Br\u00e5te, Engebretsen Serina Beate, Pedersen Benedikte Nevjen, Atiya R Ali, Marie Paulsen Madsen, Rasmus Riis Kopperud, Karoline Bragstad, Olav Hungnes",
                         "value": "Kathrine Stene-Johansen, Andreas Rohringer, Kamilla Heddeland Instefjord, Hilde Elshaug, Garcia Llorente Ignacio, Jon Br\u00e5te, Engebretsen Serina Beate, Pedersen Benedikte Nevjen, Atiya R Ali, Marie Paulsen Madsen, Rasmus Riis Kopperud, Karoline Bragstad, Olav Hungnes"
                       },
-                      "S1_mutations": {
-                        "value": 1.0
-                      },
                       "recency": {
                         "value": "Older"
-                      },
-                      "country": {
-                        "value": "Norway"
-                      },
-                      "emerging_lineage": {
-                        "value": "24A"
-                      },
-                      "clade_membership": {
-                        "value": "24F (XEC)"
                       },
                       "pango_lineage": {
                         "value": "XEC.9",
@@ -845,6 +807,18 @@
                       },
                       "epiweek": {
                         "value": "202502"
+                      },
+                      "emerging_lineage": {
+                        "value": "24A"
+                      },
+                      "clade_membership": {
+                        "value": "24F (XEC)"
+                      },
+                      "S1_mutations": {
+                        "value": 1.0
+                      },
+                      "country": {
+                        "value": "Norway"
                       },
                       "division": {
                         "value": "Nordland"
@@ -890,20 +864,8 @@
                         "author": "Kathrine Stene-Johansen, Andreas Rohringer, Kamilla Heddeland Instefjord, Hilde Elshaug, Garcia Llorente Ignacio, Jon Br\u00e5te, Engebretsen Serina Beate, Pedersen Benedikte Nevjen, Atiya R Ali, Marie Paulsen Madsen, Rasmus Riis Kopperud, Karoline Bragstad, Olav Hungnes",
                         "value": "Kathrine Stene-Johansen, Andreas Rohringer, Kamilla Heddeland Instefjord, Hilde Elshaug, Garcia Llorente Ignacio, Jon Br\u00e5te, Engebretsen Serina Beate, Pedersen Benedikte Nevjen, Atiya R Ali, Marie Paulsen Madsen, Rasmus Riis Kopperud, Karoline Bragstad, Olav Hungnes"
                       },
-                      "S1_mutations": {
-                        "value": 3.0
-                      },
                       "recency": {
                         "value": "One month ago"
-                      },
-                      "country": {
-                        "value": "Norway"
-                      },
-                      "emerging_lineage": {
-                        "value": "24A"
-                      },
-                      "clade_membership": {
-                        "value": "24F (XEC)"
                       },
                       "pango_lineage": {
                         "value": "XEC.2",
@@ -914,6 +876,18 @@
                       },
                       "epiweek": {
                         "value": "202522"
+                      },
+                      "emerging_lineage": {
+                        "value": "24A"
+                      },
+                      "clade_membership": {
+                        "value": "24F (XEC)"
+                      },
+                      "S1_mutations": {
+                        "value": 3.0
+                      },
+                      "country": {
+                        "value": "Norway"
                       },
                       "division": {
                         "value": "Vestland"
