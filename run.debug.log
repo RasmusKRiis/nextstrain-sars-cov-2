@@ -11,6 +11,9 @@
 + NCOV_REF=master
 + CORES=4
 + INCLUDE_REFERENCE=0
++ : sars-cov-2
++ : /home/rasmuskopperud.riis/Coding/CODEX-projects/nextstrain-sars-cov-2/results/auspice
++ SANITIZE_METADATA=true
 + [[ -f /home/rasmuskopperud.riis/Coding/CODEX-projects/nextstrain-sars-cov-2/data/custom.metadata.tsv ]]
 + [[ -f /home/rasmuskopperud.riis/Coding/CODEX-projects/nextstrain-sars-cov-2/data/custom.sequences.fasta ]]
 + rm -rf /home/rasmuskopperud.riis/Coding/CODEX-projects/nextstrain-sars-cov-2/.ncov
@@ -29,7 +32,7 @@ Wrote /home/rasmuskopperud.riis/Coding/CODEX-projects/nextstrain-sars-cov-2/prof
 + CONDA_ENV=workflow/envs/nextstrain.yaml
 + mkdir -p /home/rasmuskopperud.riis/Coding/CODEX-projects/nextstrain-sars-cov-2/results
 + [[ 0 == \1 ]]
-+ nextstrain build . --cores 4 --use-conda --snakefile .ncov/Snakefile --config conda_environment=workflow/envs/nextstrain.yaml --configfile .ncov/defaults/parameters.yaml --configfile profiles/lineage-builds/builds.yaml
-KeyError in file "/nextstrain/build/.ncov/Snakefile", line 148:
-'auspice_json_prefix'
-  File "/nextstrain/build/.ncov/Snakefile", line 148, in <module>
++ nextstrain build . --cores 4 --use-conda --snakefile .ncov/Snakefile --config conda_environment=workflow/envs/nextstrain.yaml auspice_json_prefix=sars-cov-2 auspice_dir=/home/rasmuskopperud.riis/Coding/CODEX-projects/nextstrain-sars-cov-2/results/auspice sanitize_metadata=true --configfile .ncov/defaults/parameters.yaml --configfile profiles/lineage-builds/builds.yaml
+TypeError in file "/nextstrain/build/.ncov/workflow/snakemake_rules/main_workflow.smk", line 15:
+string indices must be integers, not 'str'
+  File "/nextstrain/build/.ncov/workflow/snakemake_rules/main_workflow.smk", line 15, in <module>
