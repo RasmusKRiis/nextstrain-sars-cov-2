@@ -8,6 +8,13 @@ injecting build blocks into a template.
 import argparse, pathlib, urllib.request, urllib.error, re, sys
 RAW_URL = "https://raw.githubusercontent.com/cov-lineages/pango-designation/master/lineage_notes.txt"
 
+
+def _clean_tsv_field(value: str) -> str:
+    value = value.strip()
+    if len(value) >= 2 and value[0] == value[-1] == '"':
+        return value[1:-1]
+    return value
+
 def load_metadata_lineages(path: pathlib.Path | None) -> set[str]:
     if not path or not path.exists():
         return set()
@@ -16,7 +23,7 @@ def load_metadata_lineages(path: pathlib.Path | None) -> set[str]:
     except OSError:
         return set()
     with fh:
-        header = fh.readline().rstrip("\n").split("\t")
+        header = [_clean_tsv_field(v) for v in fh.readline().rstrip("\n").split("\t")]
         try:
             idx = header.index("pango_lineage")
         except ValueError:
@@ -28,7 +35,7 @@ def load_metadata_lineages(path: pathlib.Path | None) -> set[str]:
         for line in fh:
             parts = line.rstrip("\n").split("\t")
             if idx < len(parts):
-                lineage = parts[idx].strip()
+                lineage = _clean_tsv_field(parts[idx])
                 if lineage:
                     lineages.add(lineage)
     return lineages
@@ -77,13 +84,24 @@ def sanitize_prefix(prefix: str) -> str:
     return re.sub(r"[^A-Za-z0-9_-]+", "_", prefix)
 
 
-def build_block(prefix: str, lineage_list: list[str]) -> str:
-    safe_prefix = sanitize_prefix(prefix)
+def build_block(prefix: str, lineage_list: list[str], *, key: str | None = None, title: str | None = None) -> str:
+    safe_prefix = sanitize_prefix(key or prefix)
+    build_title = title or f"SARS-CoV-2 — {prefix}"
     return f"""  {safe_prefix}:
-    title: "SARS-CoV-2 — {prefix}"
+    title: "{build_title}"
     subsampling_scheme: by-pango-list
     pango_lineage: {pylist(lineage_list)}
 """
+
+
+def metadata_aggregate_lineages(metadata_lineages: set[str], *, recombinants: bool) -> list[str]:
+    filtered = sorted(
+        lineage
+        for lineage in metadata_lineages
+        if TOKEN_RE.match(lineage)
+        and (lineage.upper().startswith("X") if recombinants else not lineage.upper().startswith("X"))
+    )
+    return filtered
 
 def main():
     ap = argparse.ArgumentParser()
@@ -110,6 +128,36 @@ def main():
                 continue
         blocks.append(build_block(p, lst))
         selected.append(p)
+
+    # Dataset-wide combined analyses:
+    #   - all recombinant Pango lineages (X*)
+    #   - all non-recombinant Pango lineages
+    recombinant_lineages = metadata_aggregate_lineages(metadata_lineages, recombinants=True)
+    non_recombinant_lineages = metadata_aggregate_lineages(metadata_lineages, recombinants=False)
+
+    if recombinant_lineages:
+        blocks.append(
+            build_block(
+                "recombinants_all",
+                recombinant_lineages,
+                title="SARS-CoV-2 — All recombinants (X*)",
+            )
+        )
+        selected.append("recombinants_all")
+    else:
+        print("Skipping recombinants_all: no recombinant (X*) sequences found in metadata", file=sys.stderr)
+
+    if non_recombinant_lineages:
+        blocks.append(
+            build_block(
+                "non_recombinants_all",
+                non_recombinant_lineages,
+                title="SARS-CoV-2 — All non-recombinants",
+            )
+        )
+        selected.append("non_recombinants_all")
+    else:
+        print("Skipping non_recombinants_all: no non-recombinant sequences found in metadata", file=sys.stderr)
 
     tpl = pathlib.Path(args.template).read_text(encoding="utf-8")
     rendered = tpl.replace("__BUILDS__", "".join(blocks).rstrip())
