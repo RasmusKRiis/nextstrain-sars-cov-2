@@ -13,10 +13,18 @@ refine:
 # Subsampling scheme filtered by per-build pangolin_lineage list
 subsampling:
   by-pango-list:
-    query: --query "(pangolin_lineage in {pangolin_lineage})"
+    pangolin:
+      query: --query "(pango_lineage in {pango_lineage})"
 
 filter:
   min_length: 100
+
+traits:
+  default:
+    sampling_bias_correction: 2.5
+    columns:
+      - country
+      - pango_lineage
 
 files:
   auspice_config: profiles/lineage-builds/auspice-config.json

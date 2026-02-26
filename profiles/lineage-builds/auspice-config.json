@@ -1,7 +1,7 @@
 {
   "title": "SARS-CoV-2 custom builds",
   "colorings": [
-    { "key": "pangolin_lineage", "title": "Pango lineage" },
+    { "key": "pango_lineage", "title": "Pango lineage" },
     { "key": "country", "title": "Country" }
   ],
   "geo_resolutions": ["country", "division", "location"]
