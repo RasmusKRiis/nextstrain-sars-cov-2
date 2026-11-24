@@ -25,6 +25,11 @@ traits:
     columns:
       - country
       - pango_lineage
+  # Keep Pango metadata for colouring; TreeTime cannot infer 300+ states.
+  all_variants_all:
+    columns:
+      - country
+      - division
 
 files:
   auspice_config: profiles/lineage-builds/auspice-config.json
